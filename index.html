@@ -11,30 +11,32 @@
 
 <body>
 
-    <div class="container">
-        <div>
+    <div class="flex-container">
 
-            <header class="header">
-                <h1>Stocks - Profit & Loss Calculator </h1>
-            </header>
+        <section class="section-main">
 
-            <section class="section">
+            <h1 class="title">Stocks - Profit & Loss Calculator (INR)</h1>
 
-                <label for="initial-price">Initial Price:</label>
-                <input type="number" id="initial-price" />
+            <!-- <label for="initial-price">Initial Price:</label> -->
+            <input type="number" class="input-class" id="initial-price" placeholder="Initial Price" />
 
-                <label for="stocks-count">No of Stocks</label>
-                <input type="number" id="stocks-count" />
+            <!-- <label for="stocks-count">No of Stocks</label> -->
+            <input type="number" class="input-class" id="stocks-count" placeholder="No of Stocks" />
 
-                <label for="current-price">Current Price:</label>
-                <input type="number" id="current-price" />
+            <!-- <label for="current-price">Current Price:</label> -->
+            <input type="number" class="input-class" id="current-price" placeholder="Current Price" />
 
-                <button id="check-btn">Check</button>
+            <div>
+                <button id="check-btn" class="input-class">Check</button>
 
-                <div id="show-output"></div>
-            </section>
-        </div>
+            </div>
+
+            <div id="show-output"></div>
+
+        </section>
+
     </div>
+
 
 
 
