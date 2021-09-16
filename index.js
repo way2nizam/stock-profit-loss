@@ -11,8 +11,10 @@ function outputMessage(message) {
 function calculateProfit() {
   document.querySelector('body').style.backgroundColor = '#7FE5F0';
   const profit = (currentPrice.value - initialPrice.value) * stocksCount.value;
-  const profitPercentage =
-    (profit * 100) / (initialPrice.value * stocksCount.value);
+  const profitPercentage = (
+    (profit * 100) /
+    (initialPrice.value * stocksCount.value)
+  ).toFixed(2);
 
   outputMessage(
     'Profit value is ₹ ' +
@@ -27,8 +29,10 @@ function calculateLoss() {
   document.querySelector('body').style.backgroundColor = '#FF2E2E';
 
   const loss = (initialPrice.value - currentPrice.value) * stocksCount.value;
-  const lossPercentage =
-    (loss * 100) / (initialPrice.value * stocksCount.value);
+  const lossPercentage = (
+    (loss * 100) /
+    (initialPrice.value * stocksCount.value)
+  ).toFixed(2);
   outputMessage(
     'Loss is ' + loss + ' and Loss percentage is ' + lossPercentage + '%.'
   );
