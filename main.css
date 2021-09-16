@@ -34,3 +34,13 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  max-width: 350px;
+  margin: auto;
+  }
+}
