@@ -10,16 +10,19 @@ function outputMessage(message) {
 
 function calculateProfit() {
   document.querySelector('body').style.backgroundColor = '#7FE5F0';
-  const profit = (currentPrice.value - initialPrice.value) * stocksCount.value;
+  const profit = (
+    (currentPrice.value - initialPrice.value) *
+    stocksCount.value
+  ).toFixed(2);
   const profitPercentage = (
     (profit * 100) /
     (initialPrice.value * stocksCount.value)
   ).toFixed(2);
 
   outputMessage(
-    'Profit value is ₹ ' +
+    'Profit = ₹ ' +
       profit +
-      ' and Profit percentage is ' +
+      ' and Profit Percentage = ' +
       profitPercentage +
       '%.'
   );
@@ -27,33 +30,46 @@ function calculateProfit() {
 
 function calculateLoss() {
   document.querySelector('body').style.backgroundColor = '#FF2E2E';
-
-  const loss = (initialPrice.value - currentPrice.value) * stocksCount.value;
+  const loss = (
+    (initialPrice.value - currentPrice.value) *
+    stocksCount.value
+  ).toFixed(2);
   const lossPercentage = (
     (loss * 100) /
     (initialPrice.value * stocksCount.value)
   ).toFixed(2);
   outputMessage(
-    'Loss is ' + loss + ' and Loss percentage is ' + lossPercentage + '%.'
+    'Loss = ₹ ' + loss + ' & Loss Percentage = ' + lossPercentage + '%.'
   );
 }
 
 function clickHandler() {
-  if (stocksCount.value < 0) {
+  if (
+    stocksCount.value <= 0 ||
+    stocksCount.value == '' ||
+    initialPrice.value == '' ||
+    initialPrice.value <= 0 ||
+    currentPrice.value == '' ||
+    currentPrice.value <= 0
+  ) {
+    alert(
+      'Field can not be empty, zero or negative. Please enter the correct values.'
+    );
+  } else if (
+    currentPrice.value * stocksCount.value >
+    initialPrice.value * stocksCount.value
+  ) {
+    calculateProfit();
+  } else if (
+    initialPrice.value * stocksCount.value >
+    currentPrice.value * stocksCount.value
+  ) {
+    calculateLoss();
   } else {
-    if (
-      currentPrice.value * stocksCount.value >
-      initialPrice.value * stocksCount.value
-    ) {
-      calculateProfit();
-    } else if (
-      initialPrice.value * stocksCount.value >
-      currentPrice.value * stocksCount.value
-    ) {
-      calculateLoss();
-    } else {
-      outputMessage('No Pain No Gain');
-    }
+    document.querySelector('body').style.backgroundColor = '#FFFFFF';
+    document.querySelector('#show-output').style.backgroundColor = '#7FE5F0';
+
+    outputMessage('No Pain No Gain.');
   }
 }
 
