@@ -67,7 +67,7 @@ function clickHandler() {
     calculateLoss();
   } else {
     document.querySelector('body').style.backgroundColor = '#FFFFFF';
-    document.querySelector('#show-output').style.backgroundColor = '#7FE5F0';
+    document.querySelector('#show-output').style.backgroundColor = '#D3D3D3';
 
     outputMessage('No Pain No Gain.');
   }
