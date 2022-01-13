@@ -4,11 +4,11 @@ const currentPrice = document.querySelector('#current-price');
 const checkButton = document.querySelector('#check-btn');
 const showOutput = document.querySelector('#show-output');
 
-function outputMessage(message) {
+const outputMessage = (message) => {
   showOutput.innerText = 'Result: ' + message;
-}
+};
 
-function calculateProfit() {
+const calculateProfit = () => {
   document.querySelector('body').style.backgroundColor = '#7FE5F0';
   const profit = (
     (currentPrice.value - initialPrice.value) *
@@ -26,9 +26,9 @@ function calculateProfit() {
       profitPercentage +
       '%.'
   );
-}
+};
 
-function calculateLoss() {
+const calculateLoss = () => {
   document.querySelector('body').style.backgroundColor = '#FF2E2E';
   const loss = (
     (initialPrice.value - currentPrice.value) *
@@ -41,9 +41,9 @@ function calculateLoss() {
   outputMessage(
     'Loss = ₹ ' + loss + ' & Loss Percentage = ' + lossPercentage + '%.'
   );
-}
+};
 
-function clickHandler() {
+const clickHandler = () => {
   if (
     stocksCount.value <= 0 ||
     stocksCount.value == '' ||
@@ -71,6 +71,6 @@ function clickHandler() {
 
     outputMessage('No Pain No Gain.');
   }
-}
+};
 
 checkButton.addEventListener('click', clickHandler);
